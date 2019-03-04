@@ -1,0 +1,476 @@
+
+/* 以下是基本設定 */
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+a, a:hover, a:focus {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 85%; /*設定 container 的寬度為瀏覽器寬度的 85% */
+  max-width: 1170px;
+  margin: 0 auto; /*置中*/
+  position: relative;
+}
+
+
+
+header {
+position: fixed; /*設定 Header 區塊的 position 為 fixed，來將 Header 區塊固定在最上方 */
+width: 100%;
+left: 0;
+right: 0;
+background-color: #222;
+z-index: 100;
+}
+
+#logo {
+  float: left; /*設定 logo 靠左對齊 */
+}
+
+.nav {
+  float: right; /*設定導覽按鈕靠右對齊 */
+}
+
+.nav li {
+  display: inline-block; /*水平排列，可調整margin, padding */
+}
+
+.nav li a {
+  color: #fff;
+  text-transform: capitalize;
+  display: block;
+  padding: 10px 12px;
+}
+
+/*以下是section1 */
+
+.home_bg {
+  background-image: url(../images/2.jpg);
+  background-size: cover; /*設定背景圖會填滿整個 section 的盒子。 */
+  background-position: center;
+  background-repeat: no-repeat; /*設定背景圖不重覆出現，也就是只出現一次。 */
+  width: 100%;
+  height: 100%;
+}
+
+.container_table {
+  display: table;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.container_table_cell {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle; /*設定表格內容水平、垂直置中對齊。 */
+}
+
+.container_table_cell h2 {
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 54px;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 以下是section2 */
+
+.about_me {
+  padding: 100px 0; /*設定 about_me 這個區塊上下 100px 的 padding。 */
+}
+
+h2 {
+margin-bottom: 75px;
+text-align: center;
+font-size: 40px;
+line-height: 50px;
+text-transform: uppercase;/* 全部字母大寫。*/
+letter-spacing: 2px; /*設定 h2 標題文字字元間距（letter-spacing） 2px。 */
+}
+
+.col-left, .col-right {
+  float: left; /*設定兩個區塊為浮動，靠左對齊。 */
+  width: 50%; /*設定兩個區塊能左右並排，別且各佔一半的畫面。*/
+  padding: 0 15px;/*設定兩個區塊中間的空格，我們會使用 padding。*/
+}
+
+.personal-info h3 {
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+
+.personal-info p {
+  color: #767676;
+  line-height: 24px;
+  text-align: justify; /*左右對齊*/
+}
+
+.skill {
+  margin: 30px auto;
+}
+
+.skill li {
+  font-size: 15px;
+  line-height: 35px;
+  text-transform: capitalize;
+}
+
+.button-group .download_cv,  .button-group .hire_me {
+  display: inline-block; /*兩個按鈕水平排列 */
+}
+
+.button-group .download_cv {
+  margin-right: 18px; /*設定兩個按鈕的間距 */
+}
+
+.button-group a {
+  display: block; /*設定按鈕以 block 顯示，<a></a> 標籤預設以 inline 顯示，為了後續可以設定 padding 和 margin，所以需要特別設定。*/
+  color: #000;
+  border: 1px solid #333;
+  border-radius: 10px; /*設定按鈕邊框圓角*/
+  padding: 10px 38px; /*設定按鈕的內部間距。 */
+  text-transform: capitalize;
+}
+
+/*
+使用 pseudo-class 設定 CSS 樣式
+
+接著我們要設定當滑鼠移至按鈕上方時產生特效，我們會使用 pseudo-class。CSS 有一種特殊的類別，稱為 pseudo-classes (偽類別)，這種類別與某個「狀態」有關，例如：
+
+:visited - 點過的連結。
+:hover - 滑鼠移過的地方。
+:focus - 滑鼠所在的表單輸入框。
+:first-child - 第一個子元素。
+:last-child - 最後一個子元素。
+*/
+
+.button-group a:hover {
+  background: #000;
+  color: #fff; /*設定滑鼠滑過按鈕時背景為黑色、文字為白色*/
+  -webkit-transition: all .4s linear;
+  -moz-transition: all .4s linear;
+  -ms-transition: all .4s linear;
+  -o-transition: all .4s linear;
+  transition: all .4s linear;
+}
+
+/*由於轉場效果是在 CSS3 中才新增的，所以不支援較舊的瀏覽器版本，所以我們必須加上各個常見瀏覽器的前綴字元，讓語法可以指定瀏覽器使用，未來在實作專案中會常常使用到，以下為各個瀏覽器的前綴字元：
+Google Chrome 及 Safari：-webkit-。
+FireFox：-moz-。
+Internet Explorer：-ms-。
+Opera：-o-。
+*/
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/*
+設定 content 為空值，注意這裡是兩個單引號「 ' 」，你也可以使用雙引號，只要注意不能使用一單一雙的引號就可以了。
+設定 display 為 table，這裡你要設定為 display: block; 也是可以的。
+設定 clear: both;，可以一次清除 float: left; 和 float: right; 的浮動。
+*/
+
+/*
+::first-line - 選取第一行。
+::first-letter - 選取第一個字。
+::before - 從選取元素的前面插入東西。
+::after - 從選取元素的後面插入東西。
+::selection - 選取文字反白後。
+*/
+
+/*以下為section3*/
+
+.my_service {
+  padding: 100px 0;
+  background-color: #f9f9f9;
+}
+
+.service-content {
+  float: left;/*設定三個區塊為浮動，靠左對齊。*/
+  width: 33.333333%;/*設定三個區塊分別佔三分之一的畫面。*/
+  padding: 0 15px; /*設定三個區塊之間的空格，使用 padding。*/
+}
+
+.service-content i{
+font-size: 30px;
+line-height: 46px;
+}
+
+.service-content h3 {
+font-size: 16px;
+letter-spacing: 1px;
+margin-top: 13px;
+margin-bottom: 8px; /*設定小標題文字區塊與上下其他內容的間距。*/
+text-transform: capitalize;
+}
+
+.service-content p {
+color: #767676;
+font-size: 14px;
+font-weight: 300;
+line-height: 24px;
+}
+
+/*以下為section4*/
+
+.resume {
+  padding: 100px 0;
+}
+
+.col-horizontal {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #767676;/*設定 col-horizontal 區塊下方的線框作為設計稿中看到的水平線。*/
+}
+
+.col-horizontal:last-child { /*設定最後一個 col-horizontal 區塊下方不要有線框。*/
+  border-bottom: 0;
+}
+
+h3.resume-subtitle { /*這裡你會看到我們在 class 名稱前面加上了 h3，意思是只有當你在 HTML 檔案撰寫 <h3 class"resume-subtitle"></h3> 的時候才會有上面設定的樣式。*/
+  font-size: 20px;
+  margin-left: 15px;
+  margin-top: 12px;
+  text-transform: capitalize;
+}
+
+.col-horizontal .col-item {
+  float: left; /*設定區塊浮動，靠左對齊*/
+  width: 50%;
+  padding: 0 15px;
+}
+
+.experience-year {
+  background-color: #000;
+  color: #fff;
+  display: inline-block; /*設定 experience-year 區塊以 inline-block 顯示。*/
+  padding: 4px 20px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.resume-detail h4 {
+  font-size: 16px;
+  line-height: 30px;
+  text-transform: capitalize;
+}
+
+.resume-detail h6 {
+  font-size: 12px;
+  margin-bottom: 9px;
+  text-transform: capitalize;
+}
+
+.resume-detail p {
+  line-height: 22px;
+}
+
+/*以下為quote section */
+
+.quotes {
+  padding: 100px 0;
+  background-image: url(../images/4.jpg);
+  -webkit-background-size: cover;
+  background-size: cover; /*設定背景圖會填滿整個 section 的盒子。*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /*Parallax*/
+  position: relative;
+  width: 100%;
+}
+
+.quote-inner {
+  color: #fff;
+  text-align: center;
+}
+
+.quote-inner h3 {
+  font-size: 28px;
+  text-transform: capitalize;
+}
+
+.quote-inner p{
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.quote-inner a {
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 11px;
+  padding: 12px 49px; /*設定按鈕的文字與線框的間距*/
+  display: inline-block;
+  margin-top: 22px; /*設定按鈕與上方內容的間距*/
+  text-transform: uppercase; /*全部字母大寫*/
+  letter-spacing: 3px;
+}
+
+/*以下為section Latest Works */
+
+.works {
+  background-color: #f7f7f7;
+  padding: 100px 0;
+}
+
+.col-work {
+  float: left; /*設定 col-work 區塊浮動，靠左對齊。*/
+  width: 33.333333333%; /*設定 col-work 區塊佔三分之一。*/
+  padding: 0 15px; /* 區塊間距*/
+}
+
+.col-work a {
+  display: block;
+  margin-bottom: 14px;
+  position: relative;
+  -webkit-transition: .2s linear;
+  -moz-transition: .2s linear;
+  -ms-transition: .2s linear;
+  -o-transition: .2s linear;
+  transition: .2s linear;
+  top: 0;
+  left: 0;
+}
+
+.col-work a:hover {
+  box-shadow: 0 16px 22px 0 rgba(90, 91 95 0.3);
+  top: -5px;
+  color: #000;
+}
+
+/*以下為contact section*/
+.contact {
+  padding: 100px 0;
+}
+
+.contact-form {
+  width: 65%;
+  margin: 0 auto; /*水平置中*/
+  text-align: center;
+}
+
+.contact-form .form-input:first-child,
+.contact-form .form-input:nth-child(2) {
+  float: left; 
+  width: 50%;
+  padding: 0 15px;
+}
+
+.contact-form .form-input:nth-child(3) {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.contact-form input.form-style {
+  width: 100%;
+  border: none;/*一定要先取消原先的線框才能正確的設定 border-bottom*/
+  border-bottom: 1px solid #333;
+  text-transform: capitalize;
+  padding-bottom: 19px;
+  margin-bottom: 12px;
+  outline: none;
+}
+
+.contact-form textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #333;
+  outline: none;
+}
+
+.form-submit {
+  text-align: left;
+  padding: 0 15px;
+}
+
+.form-submit input {
+  font-size: 16px;
+  text-transform: capitalize;
+  background-color: transparent; /*設定送出按鈕背景顏色是透明的*/
+  border: 1px solid #000;
+  border-radius: 12px;
+  padding: 15px 60px;
+  margin-top: 16px
+  margin-bottom: 14px;
+  cursor: pointer; /*設定送出按鈕游標的類型為 pointer。*/ /* <a></a> 標籤預設的 cursor 就是 pointer。*/
+  -webkit-transition: .4s linear;
+  -moz-transition: .4s linear;
+  -ms-transition: .4s linear;
+  -o-transition: .4s linear;
+  transition: .4s linear;
+}
+
+.form-submit input:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/*以下為footer*/
+
+ footer {
+  padding: 80px 0;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+ }
+
+.footer-content p {
+  line-height: 22px;
+}
+
+
+
+
+
+
+
+
